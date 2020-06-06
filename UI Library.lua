@@ -1,68 +1,72 @@
-local lib = {}
-function lib:CreateWindow(nameText)
-local FreddyUI = Instance.new("ScreenGui")
+local library = {}
+function library:Window(name)
+local UI = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local TextLabel = Instance.new("TextLabel")
-local CreditLabel = Instance.new("TextLabel")
 local ScrollingFrame = Instance.new("ScrollingFrame")
-local UIGridLayout = Instance.new("UIGridLayout")
-local TextButton = Instance.new("TextButton")
-FreddyUI.Name = "FreddyUI"
-FreddyUI.Parent = game.Players.LocalPlayer:WaitForChild("CoreGui")
-FreddyUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+local UIListLayout = Instance.new("UIListLayout")
+local help = Instance.new("TextLabel")
 
-Frame.Parent = FreddyUI
+UI.Name = "UI"
+UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+
+Frame.Parent = UI
+Frame.Active = true
 Frame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-Frame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-Frame.Position = UDim2.new(0.278202683, 0, 0.213147417, 0)
-Frame.Size = UDim2.new(0, 643, 0, 298)
+Frame.BorderColor3 = Color3.fromRGB(187, 28, 198)
+Frame.BorderSizePixel = 2
+Frame.Position = UDim2.new(0.0334608033, 0, 0.143426299, 0)
+Frame.Size = UDim2.new(0, 165, 0, 29)
+Frame.Draggable = true
 
 TextLabel.Parent = Frame
 TextLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TextLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextLabel.Position = UDim2.new(-0.000179886818, 0, -0.00161768496, 0)
-TextLabel.Size = UDim2.new(0, 643, 0, 26)
-TextLabel.Font = Enum.Font.GothamBlack
-TextLabel.Text = nameText
+TextLabel.BackgroundTransparency = 1.000
+TextLabel.BorderColor3 = Color3.fromRGB(187, 28, 198)
+TextLabel.BorderSizePixel = 0
+TextLabel.Size = UDim2.new(0, 165, 0, 29)
+TextLabel.Font = Enum.Font.Cartoon
+TextLabel.Text = name
 TextLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
 TextLabel.TextWrapped = true
 
-CreditLabel.Name = "CreditLabel"
-CreditLabel.Parent = Frame
-CreditLabel.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-CreditLabel.BorderColor3 = Color3.fromRGB(255, 255, 255)
-CreditLabel.Position = UDim2.new(-0.000179886818, 0, 0.998368979, 0)
-CreditLabel.Size = UDim2.new(0, 643, 0, 15)
-CreditLabel.Font = Enum.Font.GothamBlack
-CreditLabel.Text = "P to open/close | Credits: freddy#7572 "
-CreditLabel.TextColor3 = Color3.fromRGB(255, 255, 255)
-CreditLabel.TextScaled = true
-CreditLabel.TextSize = 14.000
-CreditLabel.TextWrapped = true
-
 ScrollingFrame.Parent = Frame
 ScrollingFrame.Active = true
 ScrollingFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-ScrollingFrame.BorderColor3 = Color3.fromRGB(255, 255, 255)
-ScrollingFrame.Position = UDim2.new(0, 0, 0.0856306329, 0)
-ScrollingFrame.Size = UDim2.new(0, 642, 0, 271)
+ScrollingFrame.BorderColor3 = Color3.fromRGB(187, 28, 198)
+ScrollingFrame.BorderSizePixel = 2
+ScrollingFrame.Position = UDim2.new(0, 0, 1.20689654, 0)
+ScrollingFrame.Size = UDim2.new(0, 165, 0, 241)
 
-UIGridLayout.Parent = ScrollingFrame
-UIGridLayout.SortOrder = Enum.SortOrder.LayoutOrder
-UIGridLayout.CellSize = UDim2.new(0, 121, 0, 32)
+UIListLayout.Parent = ScrollingFrame
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
 
-local op = {}
+help.Name = "help"
+help.Parent = Frame
+help.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+help.Position = UDim2.new(1.15151513, 0, 1, 0)
+help.Size = UDim2.new(0, 656, 0, 297)
+help.Font = Enum.Font.SourceSans
+help.Text = "P to OPEN/CLOSE"
+help.TextColor3 = Color3.fromRGB(0, 0, 0)
+help.TextScaled = true
+help.TextSize = 14.000
+help.TextWrapped = true
 
-function op:Button(name, callback)
+local epic = {}
+
+function epic:Button(buttontext, callback)
 callback = callback or function() end
+local TextButton = Instance.new("TextButton")
+TextButton.Text = buttontext
 TextButton.Parent = ScrollingFrame
-TextButton.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-TextButton.BorderColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.Position = UDim2.new(0.0108864699, 0, 0.114093959, 0)
-TextButton.Size = UDim2.new(0, 121, 0, 32)
-TextButton.Font = Enum.Font.GothamBold
+TextButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+TextButton.BackgroundTransparency = 1.000
+TextButton.BorderSizePixel = 0
+TextButton.Size = UDim2.new(0, 165, 0, 29)
+TextButton.Font = Enum.Font.SciFi
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
 TextButton.TextScaled = true
 TextButton.TextSize = 14.000
@@ -71,5 +75,10 @@ TextButton.MouseButton1Click:Connect(function()
 	pcall(callback)
 end)
 end
+
+
+wait(2)
+help:Destroy()
+return epic
 end
-return lib
+return library
