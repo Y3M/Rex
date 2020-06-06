@@ -9,7 +9,7 @@ local PlaceItemsHere = Instance.new("ScrollingFrame")
 local List_Manager = Instance.new("UIListLayout")
 
 Library.Name = "Library"
-Library.Parent = game.Players.LocalPlayer:WaitForChild("StarterGui")
+Library.Parent = game.CoreGui
 
 UI.Name = "UI"
 UI.Parent = Library
