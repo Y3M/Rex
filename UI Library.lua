@@ -48,6 +48,8 @@ Frame.ImageColor3 = Color3.fromRGB(40, 40, 40)
 Frame.ScaleType = Enum.ScaleType.Slice
 Frame.SliceCenter = Rect.new(100, 100, 100, 100)
 Frame.SliceScale = 0.120
+Frame.Active = true
+Frame.Draggable = true
 
 PlaceItemsHere.Name = "PlaceItemsHere"
 PlaceItemsHere.Parent = Frame
