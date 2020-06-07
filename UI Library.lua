@@ -92,28 +92,13 @@ TextButton.Position = UDim2.new(0.0486111119, 0, 0.0967741907, 0)
 TextButton.Size = UDim2.new(0, 130, 0, 25)
 TextButton.Font = Enum.Font.GothamSemibold
 TextButton.TextColor3 = Color3.fromRGB(255, 255, 255)
-TextButton.TextSize = 23.000
 TextButton.TextWrapped = true
 TextButton.MouseButton1Click:Connect(function()
 pcall(getscript)
 end)
 end
  --
-function Items:Section()
-local ButtonFrame = Instance.new("ImageLabel")
-ButtonFrame.Name = "ButtonFrame"
-ButtonFrame.Parent = PlaceItemsHere
-ButtonFrame.BackgroundColor3 = Color3.fromRGB(30, 30, 30)
-ButtonFrame.BackgroundTransparency = 1.000
-ButtonFrame.Position = UDim2.new(0.112903222, 0, 0.0171512514, 0)
-ButtonFrame.Size = UDim2.new(0, 144, 0, 20)
-ButtonFrame.Image = "rbxassetid://3570695787"
-ButtonFrame.ImageColor3 = Color3.fromRGB(30, 30, 30)
-ButtonFrame.ScaleType = Enum.ScaleType.Slice
-ButtonFrame.SliceCenter = Rect.new(100, 100, 100, 100)
-ButtonFrame.SliceScale = 0.120
-    
-end
+
 return Items
 end
 return Main
