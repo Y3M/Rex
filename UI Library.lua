@@ -23,6 +23,7 @@ UI.ImageColor3 = Color3.fromRGB(40, 40, 40)
 UI.ScaleType = Enum.ScaleType.Slice
 UI.SliceCenter = Rect.new(100, 100, 100, 100)
 UI.SliceScale = 0.120
+UI.Draggable = true
 
 FrameText.Name = "FrameText"
 FrameText.Parent = UI
